@@ -1,7 +1,6 @@
-require "action_cable_actor/version"
-require "action_cable_actor/actor"
-require "action_cable_actor/channel"
+require "version"
+require "action_cable/subscription_adapter/actor"
+require "action_cable/subscription_adapter/channel"
 
 module ActionCableActor
-  # Your code goes here...
 end
