@@ -1,6 +1,6 @@
 require "version"
-require "action_cable/subscription_adapter/actor"
-require "action_cable/subscription_adapter/channel"
+require_relative "./action_cable/subscription_adapter/actor"
+require_relative "./action_cable/subscription_adapter/channel"
 
 module ActionCableActor
 end
