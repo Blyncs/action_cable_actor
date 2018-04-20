@@ -1,7 +1,10 @@
 # ActionCableActor
 
-ActionCable SubscriptionAdapter based on concurrent_ruby Actors
-This is only meant for pub/sub usage within the same websocket session.
+ActionCable SubscriptionAdapter using concurrent_ruby Actors.
+
+### This is only meant for pub/sub usage within the same websocket session.
+
+Fully async broadcast and concurrent receive. 
 
 ## Installation
 
@@ -21,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+specify `actor` as adapter in `cable.yml`
 
 ## Development
 
