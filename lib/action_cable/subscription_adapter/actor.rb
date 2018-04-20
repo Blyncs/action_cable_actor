@@ -21,7 +21,10 @@ class ActionCable::SubscriptionAdapter::Actor < ActionCable::SubscriptionAdapter
   end
 
   def unsubscribe(channel, message_callback)
-    @actor_map[channel]&.tell(Struct::Unsubscribe.new(message_callback))
+    if @actor_map[channel]&.ask!(Struct::Unsubscribe.new(message_callback)) # empty
+      @actor_map[channel]&.tell(:terminate!)
+      @actor_map.delete(channel)
+    end
   end
 
   def shutdown
