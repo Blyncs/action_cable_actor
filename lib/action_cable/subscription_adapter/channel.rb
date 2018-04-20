@@ -8,7 +8,9 @@ class Channel < Concurrent::Actor::RestartingContext
   def on_message(message)
     case message
       when Struct::Broadcast
-        @subscribers.each {|subscriber| subscriber.call(message.payload)}
+        @subscribers.each do |subscriber|
+          ActionCableActor::Configuration.future_pool.future { subscriber.call(message.payload) }
+        end
       when Struct::Subscribe
         @subscribers << message.message_callback
         if message.success_callback
