@@ -9,7 +9,7 @@ class Channel < Concurrent::Actor::RestartingContext
     case message
       when Struct::Broadcast
         @subscribers.each do |subscriber|
-          ActionCableActor::Configuration.future_pool.future { subscriber.call(message.payload) }
+          ActionCableActor.configuration.future_pool.future { subscriber.call(message.payload) }
         end
       when Struct::Subscribe
         @subscribers << message.message_callback
