@@ -21,14 +21,11 @@ class ActionCable::SubscriptionAdapter::Actor < ActionCable::SubscriptionAdapter
   end
 
   def unsubscribe(channel, message_callback)
-    @actor_map[channel]&.tell(Struct::Unsubscribe.new(message_callback, success_callback))
+    @actor_map[channel]&.tell(Struct::Unsubscribe.new(message_callback))
   end
 
   def shutdown
     @actor_map.each_value { |actor| actor.tell(:terminate!)}
+    @actor_map = nil
   end
 end
-
-
-
-

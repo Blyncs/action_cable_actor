@@ -18,8 +18,8 @@ class Channel < Concurrent::Actor::RestartingContext
         end
       when Struct::Unsubscribe
         @subscribers.delete(message.message_callback)
-        if message.success_callback
-          message.success_callback.call
+        if @subscribers.empty?
+          self.tell(:terminate!)
         end
       else
         # pass to ErrorsOnUnknownMessage behaviour, which will just fail
@@ -32,4 +32,4 @@ Struct.new("Broadcast", :payload)
 
 Struct.new("Subscribe", :message_callback, :success_callback)
 
-Struct.new("Unsubscribe", :message_callback, :success_callback)
+Struct.new("Unsubscribe", :message_callback)

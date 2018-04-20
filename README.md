@@ -1,8 +1,7 @@
 # ActionCableActor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/action_cable_actor`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+ActionCable SubscriptionAdapter based on concurrent_ruby Actors
+This is only meant for pub/sub usage within the same websocket session.
 
 ## Installation
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/action_cable_actor.
+Bug reports and pull requests are welcome on GitHub at https://github.com/patrickbrownsync/action_cable_actor.
 
 ## License
 

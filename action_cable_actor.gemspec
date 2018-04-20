@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["patrick.brown@blyncsy.com"]
 
   spec.summary       = "ActionCable SubscriptionAdapter based on concurrent_ruby Actors"
-  spec.description   = "ActionCable SubscriptionAdapter based on concurrent_ruby Actors"
+  spec.description   = "ActionCable SubscriptionAdapter based on concurrent_ruby Actors - this will only work with messages on websocket session"
   spec.homepage      = ""
   spec.license       = "MIT"
 
