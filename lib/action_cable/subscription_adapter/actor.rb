@@ -3,7 +3,7 @@ require 'concurrent'
 require 'set'
 require_relative './channel'
 
-class Actor < ActionCable::SubscriptionAdapter::Base
+class ActionCable::SubscriptionAdapter::Actor < ActionCable::SubscriptionAdapter::Base
 
   def initialize(*)
     super
