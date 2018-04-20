@@ -1,7 +1,7 @@
 require 'action_cable/subscription_adapter/base'
 require 'concurrent'
 require 'set'
-require './channel'
+require_relative './channel'
 
 class Actor < ActionCable::SubscriptionAdapter::Base
 
