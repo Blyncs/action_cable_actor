@@ -1,4 +1,4 @@
-require 'concurrent_edge'
+require 'concurrent-edge'
 
 class Channel < Concurrent::Actor::RestartingContext
   def initialize()
